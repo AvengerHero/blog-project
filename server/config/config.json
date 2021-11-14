@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "moji1234",
-    "database": "moji",
-    "host": "127.0.0.1",
+    "username": "zimposof_avengerteam",
+    "password": "1234567890",
+    "database": "zimposof_avengerteam",
+    "host": "zimposoft.com",
     "dialect": "mysql",
+    "port": "3306",
     "operatorsAliases": false
   },
   "test": {

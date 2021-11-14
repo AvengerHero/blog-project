@@ -4,7 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
 const config = require('../nuxt.config.js')
-const mojiController = require('./controllers/moji')
+const articleController = require('./controllers/article')
 
 // Import and Set Nuxt.js options
 config.dev = process.env.NODE_ENV !== 'production'
@@ -25,10 +25,10 @@ async function start () {
   app.use(express.json())
 
   // Moji Controller routing
-  app.get('/api/moji', mojiController.index)
-  app.post('/api/moji', mojiController.store)
-  app.put('/api/moji/:id', mojiController.update)
-  app.delete('/api/moji/:id', mojiController.destroy)
+  app.get('/api/article', articleController.index)
+  // app.post('/api/moji', mojiController.store)
+  // app.put('/api/moji/:id', mojiController.update)
+  // app.delete('/api/moji/:id', mojiController.destroy)
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
