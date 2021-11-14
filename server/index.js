@@ -9,6 +9,8 @@ const articleController = require('./controllers/article')
 // Import and Set Nuxt.js options
 config.dev = process.env.NODE_ENV !== 'production'
 
+
+
 async function start () {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
