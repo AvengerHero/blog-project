@@ -1,6 +1,3 @@
-# moji
-
-> My super-excellent Nuxt.js project
 
 ## Build Setup
 
