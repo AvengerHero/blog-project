@@ -25,7 +25,11 @@ async function start() {
     app.use(express.json())
 
     // Moji Controller routing
-    app.get('/api/article', articleController.index)
+    app.get('/api/article/index', articleController.index)
+    app.get('/api/article/show/:id', articleController.show)
+    app.get('/api/article/create', articleController.store)
+    app.get('/api/article/update', articleController.update)
+    app.get('/api/article/delete', articleController.destroy)
         // app.post('/api/moji', mojiController.store)
         // app.put('/api/moji/:id', mojiController.update)
         // app.delete('/api/moji/:id', mojiController.destroy)
