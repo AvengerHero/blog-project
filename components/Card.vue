@@ -1,0 +1,43 @@
+<template>
+  <div>
+    <v-card
+      class="mx-auto"
+      max-width="400"
+    >
+      <v-img
+        class="white--text align-end"
+        height="200px"
+        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      >
+        <v-card-title>{{ title }}</v-card-title>
+      </v-img>
+      <v-card-subtitle class="pb-0">
+        {{ author }}
+      </v-card-subtitle>
+      <v-card-text class="text--primary">
+        <div>{{ content }}</div>
+        <!-- <div>Whitsunday Island, Whitsunday Islands</div> -->
+      </v-card-text>
+    </v-card>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    images: String,
+    title: String,
+    author: String,
+    content: String
+  },
+  data: () => {
+    return {
+      data: []
+    }
+  }
+}
+</script>
+
+<style lang="css">
+
+</style>

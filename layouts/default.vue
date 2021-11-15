@@ -103,8 +103,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Moji',
-          to: '/moji'
+          title: 'Home',
+          to: '/home'
         },
         {
           icon: 'mdi-chart-bubble',
