@@ -9,37 +9,35 @@ const articleController = require('./controllers/article')
 // Import and Set Nuxt.js options
 config.dev = process.env.NODE_ENV !== 'production'
 
+async function start() {
+    // Init Nuxt.js
+    const nuxt = new Nuxt(config)
 
+    const { host, port } = nuxt.options.server
 
-async function start () {
-  // Init Nuxt.js
-  const nuxt = new Nuxt(config)
+    await nuxt.ready()
+        // Build only in dev mode
+    if (config.dev) {
+        const builder = new Builder(nuxt)
+        await builder.build()
+    }
+    // JSON Parser
+    app.use(express.json())
 
-  const { host, port } = nuxt.options.server
+    // Moji Controller routing
+    app.get('/api/article', articleController.index)
+        // app.post('/api/moji', mojiController.store)
+        // app.put('/api/moji/:id', mojiController.update)
+        // app.delete('/api/moji/:id', mojiController.destroy)
 
-  await nuxt.ready()
-  // Build only in dev mode
-  if (config.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
-  }
-  // JSON Parser
-  app.use(express.json())
+    // Give nuxt middleware to express
+    app.use(nuxt.render)
 
-  // Moji Controller routing
-  app.get('/api/article', articleController.index)
-  // app.post('/api/moji', mojiController.store)
-  // app.put('/api/moji/:id', mojiController.update)
-  // app.delete('/api/moji/:id', mojiController.destroy)
-
-  // Give nuxt middleware to express
-  app.use(nuxt.render)
-
-  // Listen the server
-  app.listen(port, host)
-  consola.ready({
-    message: `Server listening on http://${host}:${port}`,
-    badge: true
-  })
+    // Listen the server
+    app.listen(port, host)
+    consola.ready({
+        message: `Server listening on http://${host}:${port}`,
+        badge: true
+    })
 }
 start()
