@@ -90,3 +90,4 @@ sw.*
 *.swp
 .eslintrc.js
 .vscode/settings.json
+.eslintrc.js
