@@ -21,7 +21,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="(item, i) in articleData" :key="i">
+        <v-col v-for="(item, i) in articleData" :key="i" cols="3">
           <CardVue
             :title="item.title"
             :author="item.author"
@@ -38,7 +38,7 @@ import CardVue from '~/components/Card.vue'
 
 export default {
   components: {
-    CardVue,
+    CardVue
   },
   data: () => {
     return {
@@ -48,19 +48,19 @@ export default {
         'warning',
         'pink darken-2',
         'red lighten-1',
-        'deep-purple accent-4',
+        'deep-purple accent-4'
       ],
-      slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
+      slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth']
     }
   },
-  created() {
-    this.initalData()
+  created () {
+    this.initailData()
   },
   methods: {
-    async initalData() {
+    async initailData () {
       this.articleData = await this.$axios.$get('/api/article/index')
-    },
-  },
+    }
+  }
 }
 </script>
 

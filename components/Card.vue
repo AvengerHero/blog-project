@@ -24,13 +24,13 @@ export default {
     images: String,
     title: String,
     author: String,
-    content: String,
+    content: String
   },
   data: () => {
     return {
-      data: [],
+      data: []
     }
-  },
+  }
 }
 </script>
 
