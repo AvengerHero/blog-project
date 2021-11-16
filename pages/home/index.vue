@@ -9,22 +9,23 @@
             hide-delimiter-background
             show-arrows-on-hover
           >
-            <v-carousel-item
-              v-for="(slide, i) in slides"
-              :key="i"
-            >
-              <v-img src="https://api.lorem.space/image/movie" contain width="100%" height="100%" />
+            <v-carousel-item v-for="(slide, i) in slides" :key="i">
+              <v-img
+                src="https://api.lorem.space/image/movie"
+                contain
+                width="100%"
+                height="100%"
+              />
             </v-carousel-item>
           </v-carousel>
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="i in 4" :key="i">
+        <v-col v-for="(item, i) in articleData" :key="i">
           <CardVue
-            title="test"
-            author="parinya"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, a minima. Officia adipisci modi impedit dolores perferendis vero nulla atque sit sapiente odio, nam qui illo omnis repudiandae dolorum. Tempore?
-"
+            :title="item.title"
+            :author="item.author"
+            :content="item.content"
           />
         </v-col>
       </v-row>
@@ -37,38 +38,30 @@ import CardVue from '~/components/Card.vue'
 
 export default {
   components: {
-    CardVue
+    CardVue,
   },
   data: () => {
     return {
-      data: [],
+      articleData: [],
       colors: [
         'indigo',
         'warning',
         'pink darken-2',
         'red lighten-1',
-        'deep-purple accent-4'
+        'deep-purple accent-4',
       ],
-      slides: [
-        'First',
-        'Second',
-        'Third',
-        'Fourth',
-        'Fifth'
-      ]
+      slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
     }
   },
-  created () {
+  created() {
     this.initalData()
   },
   methods: {
-    async  initalData () {
-      this.data = await this.$axios.$get('/api/article/index')
-      console.log('data : ', this.data)
-    }
-  }
+    async initalData() {
+      this.articleData = await this.$axios.$get('/api/article/index')
+    },
+  },
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
