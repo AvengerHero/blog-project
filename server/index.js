@@ -22,14 +22,15 @@ async function start() {
         await builder.build()
     }
     // JSON Parser
+    app.use(express.urlencoded())
     app.use(express.json())
 
     // Moji Controller routing
     app.get('/api/article/index', articleController.index)
     app.get('/api/article/show/:id', articleController.show)
     app.post('/api/article/create', articleController.store)
-    app.put('/api/article/update', articleController.update)
-    app.delete('/api/article/delete', articleController.destroy)
+    app.put('/api/article/update/:id', articleController.update)
+    app.delete('/api/article/delete/:id', articleController.destroy)
         // app.post('/api/moji', mojiController.store)
         // app.put('/api/moji/:id', mojiController.update)
         // app.delete('/api/moji/:id', mojiController.destroy)

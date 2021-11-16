@@ -1,9 +1,6 @@
 <template>
   <div>
-    <v-card
-      class="mx-auto"
-      max-width="400"
-    >
+    <v-card class="mx-auto" max-width="400">
       <v-img
         class="white--text align-end"
         height="200px"
@@ -16,7 +13,6 @@
       </v-card-subtitle>
       <v-card-text class="text--primary">
         <div>{{ content }}</div>
-        <!-- <div>Whitsunday Island, Whitsunday Islands</div> -->
       </v-card-text>
     </v-card>
   </div>
@@ -28,16 +24,14 @@ export default {
     images: String,
     title: String,
     author: String,
-    content: String
+    content: String,
   },
   data: () => {
     return {
-      data: []
+      data: [],
     }
-  }
+  },
 }
 </script>
 
-<style lang="css">
-
-</style>
+<style lang="css"></style>
