@@ -17,11 +17,12 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "zimposof_avengerteam",
+    "password": "1234567890",
+    "database": "zimposof_avengerteam",
+    "host": "zimposoft.com",
     "dialect": "mysql",
+    "port": "3306",
     "operatorsAliases": false
   }
 }

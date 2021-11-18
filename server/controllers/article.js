@@ -6,7 +6,7 @@ module.exports = {
       const articles = await db.articles.findAll()
       return res.json(articles)
     } catch (e) {
-      // console.log(e)
+      console.log(e)
       return res.status(500).json({ message: 'Cannot get data from database.' })
     }
   },
@@ -16,12 +16,14 @@ module.exports = {
       const articles = await db.articles.findByPk(id)
       return res.json(articles)
     } catch (e) {
+      console.log('data', e)
+
       return res.status(500).json({ message: 'Cannot get data from database.' })
     }
   },
   store: async (req, res) => {
     const data = req.body
-    // console.log('data', data)
+    console.log('data', data)
     if (data) {
       try {
         const article = await db.sequelize.transaction((t) => {
@@ -29,7 +31,7 @@ module.exports = {
         })
         return res.status(201).json(article)
       } catch (e) {
-        // console.log(e)
+        console.log(e)
         return res.status(500).json({ message: 'Cannot store data to database.' })
       }
     }
