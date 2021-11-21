@@ -1,6 +1,11 @@
 const colors = require('vuetify/es5/util/colors').default
+// const config = require('./config')
+const development = process.env.NODE_ENV !== 'production'
 
 module.exports = {
+  // env: {
+  //   config
+  // },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -53,6 +58,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: development ? 'http://localhost:3001' : 'http://35.240.155.199'
   },
   /*
   ** vuetify module configuration
@@ -92,4 +98,5 @@ module.exports = {
     port: 3000,
     host: '0.0.0.0'
   }
+
 }

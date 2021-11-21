@@ -9,7 +9,7 @@
             hide-delimiter-background
             show-arrows-on-hover
           >
-            <v-carousel-item v-for="(slide, i) in slides" :key="i">
+            <v-carousel-item v-for="(slide, i) in 4" :key="i">
               <v-img
                 src="https://api.lorem.space/image/movie"
                 contain
