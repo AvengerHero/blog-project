@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "zimposof_avengerteam",
-    "password": "1234567890",
-    "database": "zimposof_avengerteam",
-    "host": "zimposoft.com",
+    "username": "root",
+    "password": "password",
+    "database": "blog_db",
+    "host": "35.240.155.199",
     "dialect": "mysql",
     "port": "3306",
     "operatorsAliases": false
