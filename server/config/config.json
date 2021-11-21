@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "blog_db",
+    "database": "blog",
     "host": "35.240.155.199",
     "dialect": "mysql",
     "port": "3306",
