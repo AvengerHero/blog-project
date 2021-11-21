@@ -21,10 +21,10 @@
 <script>
 export default {
   props: {
-    images: String,
-    title: String,
-    author: String,
-    content: String
+    // images: { type: String, required: false, default: '0' },
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    content: { type: String, required: true }
   },
   data: () => {
     return {
